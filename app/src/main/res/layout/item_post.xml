@@ -43,6 +43,14 @@
                 android:gravity="center"
                 tools:text="7" />
 
+            <ImageView
+                android:id="@+id/btnUpdate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:background="?attr/selectableItemBackground"
+                android:src="@drawable/ic_edit_black_24dp" />
+
         </LinearLayout>
 
         <include

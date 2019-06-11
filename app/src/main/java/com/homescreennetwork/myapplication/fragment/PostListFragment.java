@@ -24,6 +24,7 @@ import com.google.firebase.database.Query;
 import com.google.firebase.database.Transaction;
 import com.homescreennetwork.myapplication.R;
 import com.homescreennetwork.myapplication.activity.PostDetailActivity;
+import com.homescreennetwork.myapplication.activity.PostUpdateActivity;
 import com.homescreennetwork.myapplication.models.Post;
 import com.homescreennetwork.myapplication.viewholder.PostViewHolder;
 
@@ -83,7 +84,7 @@ public abstract class PostListFragment extends Fragment {
             }
 
             @Override
-            protected void onBindViewHolder(@NonNull PostViewHolder viewHolder, int position, @NonNull final Post model) {
+            protected void onBindViewHolder(@NonNull final PostViewHolder viewHolder, int position, @NonNull final Post model) {
                 final DatabaseReference postRef = getRef(position);
 
                 // Set click listener for the whole post view
@@ -105,18 +106,31 @@ public abstract class PostListFragment extends Fragment {
                     viewHolder.starView.setImageResource(R.drawable.ic_toggle_star_outline_24);
                 }
 
+                if (model.uid.equals(getUid())) {
+                    viewHolder.btnUpdate.setVisibility(View.VISIBLE);
+                } else {
+                    viewHolder.btnUpdate.setVisibility(View.GONE);
+                }
+
                 // Bind Post to ViewHolder, setting OnClickListener for the star button
                 viewHolder.bindToPost(model, new View.OnClickListener() {
                     @Override
-                    public void onClick(View starView) {
-                        // Need to write to both places the post is stored
-                        if (postRef.getKey() != null) {
-                            DatabaseReference globalPostRef = mDatabase.child("posts").child(postRef.getKey());
-                            DatabaseReference userPostRef = mDatabase.child("user-posts").child(model.uid).child(postRef.getKey());
+                    public void onClick(View view) {
+                        if (view == viewHolder.starView) {
+                            // Need to write to both places the post is stored
+                            if (postRef.getKey() != null) {
+                                DatabaseReference globalPostRef = mDatabase.child("posts").child(postRef.getKey());
+                                DatabaseReference userPostRef = mDatabase.child("user-posts").child(model.uid).child(postRef.getKey());
 
-                            // Run two transactions
-                            onStarClicked(globalPostRef);
-                            onStarClicked(userPostRef);
+                                // Run two transactions
+                                onStarClicked(globalPostRef);
+                                onStarClicked(userPostRef);
+                            }
+                        } else if (view == viewHolder.btnUpdate) {
+                            // Launch PostUpdateActivity
+                            Intent intent = new Intent(getActivity(), PostUpdateActivity.class);
+                            intent.putExtra(PostUpdateActivity.EXTRA_POST_KEY, postKey);
+                            startActivity(intent);
                         }
                     }
                 });
