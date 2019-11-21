@@ -1,4 +1,4 @@
-package com.homescreennetwork.myapplication.fragment;
+package com.dhananjay.myapplication.fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,6 +12,11 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.dhananjay.myapplication.R;
+import com.dhananjay.myapplication.activity.PostDetailActivity;
+import com.dhananjay.myapplication.activity.PostUpdateActivity;
+import com.dhananjay.myapplication.models.Post;
+import com.dhananjay.myapplication.viewholder.PostViewHolder;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.auth.FirebaseAuth;
@@ -22,11 +27,6 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.MutableData;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.Transaction;
-import com.homescreennetwork.myapplication.R;
-import com.homescreennetwork.myapplication.activity.PostDetailActivity;
-import com.homescreennetwork.myapplication.activity.PostUpdateActivity;
-import com.homescreennetwork.myapplication.models.Post;
-import com.homescreennetwork.myapplication.viewholder.PostViewHolder;
 
 public abstract class PostListFragment extends Fragment {
 

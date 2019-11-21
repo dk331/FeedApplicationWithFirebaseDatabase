@@ -1,4 +1,4 @@
-package com.homescreennetwork.myapplication.activity;
+package com.dhananjay.myapplication.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,12 +11,12 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
+import com.dhananjay.myapplication.R;
+import com.dhananjay.myapplication.fragment.MyPostsFragment;
+import com.dhananjay.myapplication.fragment.MyTopPostsFragment;
+import com.dhananjay.myapplication.fragment.RecentPostsFragment;
 import com.google.android.material.tabs.TabLayout;
 import com.google.firebase.auth.FirebaseAuth;
-import com.homescreennetwork.myapplication.R;
-import com.homescreennetwork.myapplication.fragment.MyPostsFragment;
-import com.homescreennetwork.myapplication.fragment.MyTopPostsFragment;
-import com.homescreennetwork.myapplication.fragment.RecentPostsFragment;
 
 public class MainActivity extends BaseActivity {
 

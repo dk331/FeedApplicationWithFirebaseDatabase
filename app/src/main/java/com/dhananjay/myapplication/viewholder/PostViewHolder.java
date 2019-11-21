@@ -1,4 +1,4 @@
-package com.homescreennetwork.myapplication.viewholder;
+package com.dhananjay.myapplication.viewholder;
 
 import android.view.View;
 import android.widget.ImageView;
@@ -6,8 +6,8 @@ import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.homescreennetwork.myapplication.R;
-import com.homescreennetwork.myapplication.models.Post;
+import com.dhananjay.myapplication.R;
+import com.dhananjay.myapplication.models.Post;
 
 public class PostViewHolder extends RecyclerView.ViewHolder {
 

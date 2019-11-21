@@ -1,4 +1,4 @@
-package com.homescreennetwork.myapplication.activity;
+package com.dhananjay.myapplication.activity;
 
 import android.app.ProgressDialog;
 

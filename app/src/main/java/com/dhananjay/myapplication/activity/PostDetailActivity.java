@@ -1,4 +1,4 @@
-package com.homescreennetwork.myapplication.activity;
+package com.dhananjay.myapplication.activity;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -15,16 +15,16 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.dhananjay.myapplication.R;
+import com.dhananjay.myapplication.models.Comment;
+import com.dhananjay.myapplication.models.Post;
+import com.dhananjay.myapplication.models.User;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.homescreennetwork.myapplication.R;
-import com.homescreennetwork.myapplication.models.Comment;
-import com.homescreennetwork.myapplication.models.Post;
-import com.homescreennetwork.myapplication.models.User;
 
 import java.util.ArrayList;
 import java.util.List;

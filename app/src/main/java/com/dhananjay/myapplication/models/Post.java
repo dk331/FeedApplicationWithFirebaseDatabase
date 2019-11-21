@@ -1,4 +1,4 @@
-package com.homescreennetwork.myapplication.models;
+package com.dhananjay.myapplication.models;
 
 import com.google.firebase.database.Exclude;
 import com.google.firebase.database.IgnoreExtraProperties;
